@@ -7,11 +7,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Bagian judul (titleSection) yang sudah ada sebelumnya
+    // 🔹 Bagian judul (titleSection)
     Widget titleSection = Container(
       padding: const EdgeInsets.all(32.0),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start, // judul rata kiri
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
             child: Column(
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text(
+                const Text(
                   'Batu, Malang, Indonesia',
                   style: TextStyle(
                     color: Colors.grey,
@@ -44,28 +44,63 @@ class MyApp extends StatelessWidget {
       ),
     );
 
+    // 🔹 Langkah 2: Bagian tombol (buttonSection)
+    Color color = Theme.of(context).primaryColor;
+    Widget buttonSection = Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _buildButtonColumn(color, Icons.call, 'CALL'),
+        _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
+        _buildButtonColumn(color, Icons.share, 'SHARE'),
+      ],
+    );
+
+    // 🔹 Langkah 3: Bagian teks (textSection)
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: const Text(
+        'Carilah teks di internet yang sesuai '
+        'dengan foto atau tempat wisata yang ingin '
+        'Anda tampilkan. '
+        'Tambahkan nama dan NIM Anda sebagai '
+        'identitas hasil pekerjaan Anda. '
+        'Selamat mengerjakan 🙂.',
+        softWrap: true,
+      ),
+    );
+
     return MaterialApp(
       title: 'Flutter layout demo',
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Flutter layout demo'),
         ),
-        body: Center(
-          child: titleSection, // sementara masih tampil titleSection
+        body: ListView(
+          children: [
+            Image.asset(
+              'images/lake.jpg',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
+            titleSection,
+            buttonSection,
+            textSection,
+          ],
         ),
       ),
     );
   }
 
-  // 🔹 Langkah 1: method helper untuk tombol (ikon + teks)
+  // 🔹 Langkah 1: helper tombol
   Column _buildButtonColumn(Color color, IconData icon, String label) {
     return Column(
-      mainAxisSize: MainAxisSize.min,              // ukuran column pas isi
-      mainAxisAlignment: MainAxisAlignment.center, // ikon + teks di tengah
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(icon, color: color),
         Container(
-          margin: const EdgeInsets.only(top: 8),   // jarak atas teks
+          margin: const EdgeInsets.only(top: 8),
           child: Text(
             label,
             style: TextStyle(
