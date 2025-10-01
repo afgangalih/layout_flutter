@@ -8,17 +8,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget titleSection = Container(
-      padding: const EdgeInsets.all(32.0), // Reasonable padding for the container
+      padding: const EdgeInsets.all(32.0),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start, // ⬅️ Tambahan penting
         children: [
           Expanded(
-            /* soal 1 */
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start, // Aligns text to the left
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                /* soal 2 */
                 Container(
-                  padding: const EdgeInsets.only(bottom: 8.0), // Small padding below title
+                  padding: const EdgeInsets.only(bottom: 8.0),
                   child: const Text(
                     'Wisata Gunung di Batu',
                     style: TextStyle(
@@ -29,30 +28,29 @@ class MyApp extends StatelessWidget {
                 Text(
                   'Batu, Malang, Indonesia',
                   style: TextStyle(
-                    color: Colors.grey[500], // Subtle grey color for subtitle
+                    color: Colors.grey,
                   ),
                 ),
               ],
             ),
           ),
-          /* soal 3 */
           Icon(
-            Icons.star, // Common icon for ratings or favorites
-            color: Colors.red[500], // Red color for the star icon
+            Icons.star,
+            color: Colors.red[500],
           ),
-          const Text('41'), // Example number, could represent rating count
+          const Text('41'),
         ],
       ),
     );
 
     return MaterialApp(
-      title: 'Flutter layout: ',
+      title: 'Flutter layout demo',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Afgan Galih - 2341760004'),
+          title: const Text('Flutter layout demo'),
         ),
         body: Center(
-          child: titleSection, // Use the titleSection widget here
+          child: titleSection,
         ),
       ),
     );
