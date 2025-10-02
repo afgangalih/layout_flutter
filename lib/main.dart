@@ -57,17 +57,20 @@ class MyApp extends StatelessWidget {
 
     // 🔹 Langkah 3: Bagian teks (textSection)
     Widget textSection = Container(
-      padding: const EdgeInsets.all(32),
-      child: const Text(
-        'Carilah teks di internet yang sesuai '
-        'dengan foto atau tempat wisata yang ingin '
-        'Anda tampilkan. '
-        'Tambahkan nama dan NIM Anda sebagai '
-        'identitas hasil pekerjaan Anda. '
-        'Selamat mengerjakan 🙂.',
-        softWrap: true,
-      ),
-    );
+  padding: const EdgeInsets.all(32),
+  child: const Text(
+    'Songgoriti adalah salah satu kawasan wisata populer '
+    'yang terletak di Kota Batu, Jawa Timur. '
+    'Daerah ini terkenal dengan pemandian air panas alami, '
+    'pemandangan pegunungan yang indah, serta suasana sejuk '
+    'yang menarik banyak wisatawan untuk berkunjung. '
+    'Selain itu, Songgoriti juga memiliki berbagai fasilitas '
+    'wisata seperti villa, pasar wisata, dan taman rekreasi. '
+    '\n\nIdentitas: Afgan Galih - 2341760004',
+    softWrap: true,
+  ),
+);
+
 
     return MaterialApp(
       title: 'Flutter layout demo',
